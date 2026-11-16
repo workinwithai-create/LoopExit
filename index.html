@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoopExit — Break the 8-Bar Trap</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #111; color: #eee; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { color: #4ade80; }
+    button, input, select { padding: 8px; margin: 4px; background: #222; color: #eee; border: 1px solid #444; }
+    button { cursor: pointer; background: #166534; }
+    .status { margin: 10px 0; color: #fbbf24; }
+    .sections { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0; }
+    .section { padding: 10px; background: #1a1a1a; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>LoopExit</h1>
+    <p>Break the 8-bar loop. Expand your chords into a full arrangement with live instrument chairs. Export grid-perfect WAV + MIDI.</p>
+    <div id="tap-start" style="padding:20px; background:#222; text-align:center; cursor:pointer;">Tap to start audio</div>
+    <div id="controls" style="display:none;">
+      <label>BPM: <input id="bpm" type="number" min="60" max="180" value="120"></label>
+      <label>Key: <select id="key"><option>Am</option><option>C</option><option>G</option><option>Dm</option></select></label>
+      <label>Chords (4): <input id="chords" value="Am F C G" placeholder="Am F C G"></label>
+      <br>
+      <button id="play">Play Arrangement</button>
+      <button id="stop">Stop</button>
+      <button id="export-wav">Export WAV</button>
+      <button id="export-midi">Export MIDI</button>
+      <div class="status" id="status">Ready</div>
+      <div class="sections" id="sections"></div>
+      <p>iOS note: silent switch mutes Web Audio. Changes apply live on next step. Exports are DAW-grid ready (first downbeat at sample 0).</p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
